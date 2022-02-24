@@ -1,4 +1,9 @@
 
+/**
+ * Compulsory part of PA Laboratory 1
+ * @author Calin Axinte
+ */
+
 public class main {
 	public static void main(String[] args)
 	{
