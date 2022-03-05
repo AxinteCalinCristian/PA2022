@@ -1,4 +1,4 @@
-<h2> Laboratory 1 </h2>
+<h2> Laboratory 2 </h2>
 <ul>
   <li> <h3> Compulsory </h3> 
     <p> Completed all requirements </p>
