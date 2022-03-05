@@ -117,7 +117,12 @@ public class AssignmentProblem {
 		System.out.println("Total number of used rooms: " + usedRooms.size());
 	}
 	
-	
+	/**
+	 * @param current_end_time end time for the current event
+	 * @param duration duration of the current event
+	 * @param size size of the current event
+	 * @return an available room, best suited for the event. If none are found, returns null.
+	 */
 	
 	private Room getAvailableRoom(Integer current_end_time, Integer duration, Integer size)
 	{
