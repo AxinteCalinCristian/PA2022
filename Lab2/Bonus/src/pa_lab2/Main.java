@@ -44,7 +44,7 @@ public class Main {
 		
 		System.out.println("Duration for the DSatur approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeEG, TimeUnit.MILLISECONDS));
 		
-		
+		/*
 		RandomDataGenerator rand = new RandomDataGenerator();
 		AssignmentProblem pb2 = new AssignmentProblem();
 		EventGraph eg2 = new EventGraph();
@@ -71,5 +71,6 @@ public class Main {
 		final long startTimeEG2 = System.nanoTime();
 		eg2.printSolution();
 		System.out.println("Duration for the DSatur approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeEG2, TimeUnit.MILLISECONDS));
+		*/
 	}
 }
