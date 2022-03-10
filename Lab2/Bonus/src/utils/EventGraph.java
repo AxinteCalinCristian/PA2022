@@ -195,11 +195,11 @@ public class EventGraph {
 	 */
 	private Color getNewColor(Vertex selectedVertex)
 	{
-		Color c = new Color(null, new Pair<LocalTime, LocalTime>(selectedVertex.getEvent().getStartTime(), selectedVertex.getEvent().getEndTime()));
+		Color c = new Color(rooms.get(0), new Pair<LocalTime, LocalTime>(selectedVertex.getEvent().getStartTime(), selectedVertex.getEvent().getEndTime()));
 		Room best_match = null;
 		for(Room r : rooms)
 		{
-			if(best_match == null)
+			if((best_match == null && selectedVertex.getEvent().getSize() <= r.getCapacity()) || (selectedVertex.getEvent().getSize() <= r.getCapacity() && r.getCapacity() < best_match.getCapacity()))
 			{
 				best_match = r;
 				c.setRoom(best_match);
@@ -208,10 +208,15 @@ public class EventGraph {
 			if(colors.contains(c))
 			{
 				best_match = null;
-				c.setRoom(null);
 			}
 			
 		}
+		
+		if(colors.contains(c))
+		{
+			return c;
+		}
+		
 		colors.add(c);
 		return c;
 	}
