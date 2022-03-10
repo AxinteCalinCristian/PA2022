@@ -42,7 +42,34 @@ public class Main {
 
 		eg.printSolution();
 		
-		System.out.println("Duration for the greedy approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeEG, TimeUnit.MILLISECONDS));
+		System.out.println("Duration for the DSatur approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeEG, TimeUnit.MILLISECONDS));
 		
+		
+		RandomDataGenerator rand = new RandomDataGenerator();
+		AssignmentProblem pb2 = new AssignmentProblem();
+		EventGraph eg2 = new EventGraph();
+		
+		for(int i=0;i<1000;i++)
+		{
+			Event e = rand.generateEvent();
+			eg2.addEvent(e);
+			pb2.addEvent(e);
+		}
+		
+		for(int i=0;i<1000;i++)
+		{
+			Room r = rand.generateRoom();
+			eg2.addRoom(r);
+			pb2.addRoom(r);
+		}
+		
+		final long startTimeAP2 = System.nanoTime();
+		
+		pb2.printSolution();
+		System.out.println("Duration for the greedy approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeAP2, TimeUnit.MILLISECONDS));
+		
+		final long startTimeEG2 = System.nanoTime();
+		eg2.printSolution();
+		System.out.println("Duration for the DSatur approach(ms): " + TimeUnit.SECONDS.convert(System.nanoTime() - startTimeEG2, TimeUnit.MILLISECONDS));
 	}
 }
