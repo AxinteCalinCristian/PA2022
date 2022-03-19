@@ -2,25 +2,27 @@
 <ul>
   <li> <h3> Compulsory </h3> 
     <ul>
-      <li> &#9989; Create an object-oriented model of the problem. You should have at least the following classes Network, Node, Computer, Router, Switch. The natural ordering of the nodes is given by their names.  </li> 
-      <li>  &#9989; Create the interfaces Identifiable and Storage. The classes above must implement these interfaces accordingly.  </li> 
-      <li>  &#9989; The Network class will contain a List of nodes.  </li> 
-      <li>  &#9989; Create and print all the nodes in the network (without the time costs).  </li> 
+      <li> &#9989;  Create a Maven project.  </li> 
+      <li>  &#9989; Create an object-oriented model of the problem. Streets have names and lengths, intersections have names. A street joins two intersections. </li> 
+      <li>  &#9989; Create the streets and the intersections of the problem described in the example. Use streams in order to easily create the intersections.  </li> 
+      <li>  &#9989; Create a list of streets, using LinkedList implementation and sort it by the length, using a comparator expressed as a lambda-expression or method reference. Make sure all the objects are comparable. </li> 
+      <li> &#9989;  Create a set of intersections, using a HashSet implementation. Verify the property that a Set does not contain duplicates.  </li> 
     </ul>
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> &#9989; Each node will contain a Map representing the time costs. Create and print the complete network in the example.  </li> 
-      <li> &#9989; Create a default method in the interface Storage, that is able to return the storage capacity in other units of storage (megabyte, kilobyte, byte). </li> 
-      <li> &#9989; In the Network class, create a method to display the nodes that are identifiable, sorted by their addresses. </li> 
-      <li> &#9989; Implement an efficient agorithm to determine all the shortests times required for data packets to travel from an identifiable node to another. </li> 
+      <li> Create a class that describes the city. </li> 
+      <li> Using Java Stream API, write a query that display all the streets that are longer than a specified value and join at least 3 streets. </li> 
+      <li> Use a third-party library in order to generate random fake names for intersections and streets.</li> 
+      <li> You may use this package of JGraphT in order to solve the problem (or other library). </li> 
+      <li> Note: A personal implementation of the algorithm will be will be scored extra (+1p). </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> &#9989; In addition to the time cost, each link between two network nodes has a probability of failure. </li> 
-      <li> &#9989; Implement an efficient agorithm to determine the safest route for a packet to travel between two given nodes. </li> 
-      <li> &#9989; Generate random network instances with known optimum and test your algorithm using JUnit or other framework. </li> 
+      <li> The city hall wants to regularly inspect the surveillance cameras, sending a maintenance car to go through it all. </li> 
+      <li> Implement an algorithm that determines the route of the maintenance car, in order to minimize the total length. The algorithm must run fast and should not find a solution that is twice as bad than the optimum route. </li> 
+      <li> Create a random problem generator, making sure that the lengths between intersections satisfy the triangle inequality. </li> 
     </ul>
   </li>
  </ul>
