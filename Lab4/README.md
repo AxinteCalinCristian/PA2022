@@ -11,11 +11,11 @@
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> Create a class that describes the city. </li> 
-      <li> Using Java Stream API, write a query that display all the streets that are longer than a specified value and join at least 3 streets. </li> 
-      <li> Use a third-party library in order to generate random fake names for intersections and streets.</li> 
-      <li> You may use this package of JGraphT in order to solve the problem (or other library). </li> 
-      <li> Note: A personal implementation of the algorithm will be will be scored extra (+1p). </li> 
+      <li> &#9989; Create a class that describes the city. </li> 
+      <li> &#9989; Using Java Stream API, write a query that display all the streets that are longer than a specified value and join at least 3 streets. </li> 
+      <li> &#9989; Use a third-party library in order to generate random fake names for intersections and streets.</li> 
+      <li> &#11015; You may use this package of JGraphT in order to solve the problem (or other library). </li> 
+      <li> &#9989; Note: A personal implementation of the algorithm will be will be scored extra (+1p). </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
