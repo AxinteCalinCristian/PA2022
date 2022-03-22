@@ -55,6 +55,11 @@ public class PrimAlgorithm {
 		for(Intersection i : city.getIntersections()) {
 			Intersection u = minKey(key, mst);
 			mst.add(u);
+			
+			if(adjacency_list.get(u) == null) {
+				continue;
+			}
+			
 			for(Map.Entry<Intersection, Integer> adj : adjacency_list.get(u).entrySet()) {
 				if(!(mst.contains(adj.getKey())) && adj.getValue() < key.get(adj.getKey())) {
 					parent.put(adj.getKey(), u);
@@ -72,7 +77,6 @@ public class PrimAlgorithm {
 	 */
 	private void print(Map<Intersection, Intersection> parent)
 	{
-	    System.out.println("Edge \tWeight");
 	    Integer total_cost = 0;
 	    for(Intersection i : adjacency_list.keySet()) {
 	    	if(parent.get(i) != null) {

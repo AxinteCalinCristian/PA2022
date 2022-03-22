@@ -20,9 +20,9 @@
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> The city hall wants to regularly inspect the surveillance cameras, sending a maintenance car to go through it all. </li> 
-      <li> Implement an algorithm that determines the route of the maintenance car, in order to minimize the total length. The algorithm must run fast and should not find a solution that is twice as bad than the optimum route. </li> 
-      <li> Create a random problem generator, making sure that the lengths between intersections satisfy the triangle inequality. </li> 
+      <li> &#9989; The city hall wants to regularly inspect the surveillance cameras, sending a maintenance car to go through it all. </li> 
+      <li> &#9989; Implement an algorithm that determines the route of the maintenance car, in order to minimize the total length. The algorithm must run fast and should not find a solution that is twice as bad than the optimum route. </li> 
+      <li> &#9989; Create a random problem generator, making sure that the lengths between intersections satisfy the triangle inequality. </li> 
     </ul>
   </li>
  </ul>
