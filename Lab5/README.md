@@ -2,27 +2,43 @@
 <ul>
   <li> <h3> Compulsory </h3> 
     <ul>
-      <li> &#9989;  Create a Maven project.  </li> 
-      <li>  &#9989; Create an object-oriented model of the problem. Streets have names and lengths, intersections have names. A street joins two intersections. </li> 
-      <li>  &#9989; Create the streets and the intersections of the problem described in the example. Use streams in order to easily create the intersections.  </li> 
-      <li>  &#9989; Create a list of streets, using LinkedList implementation and sort it by the length, using a comparator expressed as a lambda-expression or method reference. Make sure all the objects are comparable. </li> 
-      <li> &#9989;  Create a set of intersections, using a HashSet implementation. Verify the property that a Set does not contain duplicates.  </li> 
+      <li> &#9989;  Create an object-oriented model of the problem. You should have at least the following classes: Catalog and Item. The items should have at least a unique identifier, a title and its location. Consider using an interface or an abstract class in order to describe the items in a catalog. </li> 
+      <li>  &#9989; Implement the following methods representing commands that will manage the content of the catalog: 
+      <ul>
+        <li> &#9989; add: adds a new entry into the catalog; </li>
+        <li> &#9989; toString: a textual representation of the catalog; </li>
+        <li> &#9989; save: saves the catalog to an external file using JSON format; you may use Jackson or other library; </li>
+        <li> &#9989; load: loads the catalog from an external file. </li>
+        </ul>
+      </li> 
     </ul>
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> &#9989; Create a class that describes the city. </li> 
-      <li> &#9989; Using Java Stream API, write a query that display all the streets that are longer than a specified value and join at least 3 streets. </li> 
-      <li> &#9989; Use a third-party library in order to generate random fake names for intersections and streets.</li> 
-      <li> &#11015; You may use this package of JGraphT in order to solve the problem (or other library). </li> 
-      <li> &#9989; Note: A personal implementation of the algorithm will be will be scored extra (+1p). </li> 
+      <li> Represent the commands using classes instead of methods. Use an interface or an abstract class in order to desribe a generic command. </li> 
+      <li> Implement the commands load, list, view, report (create the classes AddCommand, ListCommand, etc.).
+       <ul>
+         <li> list: prints the list of items on the screen; </li>
+         <li> view: opens an item using the native operating system application (see the Desktop class); </li>
+         <li> report: creates (and opens) an HTML report representing the content of the catalog. </li>
+         <li> Use a template engine such as FreeMarker or Velocity, in order to create the HTML report. </li>
+         <li> (+1p) Use Apache Tika in order to extract metadata from your catalog items and implement the command info in order to display them. </li>
+        </ul>
+       </li> 
+      <li> The application will signal invalid date or the commands that are not valid using custom exceptions.</li> 
+      <li> The final form of the application will be an executable JAR archive. Identify the generated archive and launch the application from the console, using the JAR.</li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> &#9989; The city hall wants to regularly inspect the surveillance cameras, sending a maintenance car to go through it all. </li> 
-      <li> &#9989; Implement an algorithm that determines the route of the maintenance car, in order to minimize the total length. The algorithm must run fast and should not find a solution that is twice as bad than the optimum route. </li> 
-      <li> &#9989; Create a random problem generator, making sure that the lengths between intersections satisfy the triangle inequality. </li> 
+      <li> Suppose there is an official set of concepts (keywords) C, and that each item has a list of such concepts (example of such a classification system). Evolve your model in order to support this new feature. </li> 
+      <li> Write an algorithm that determines: 
+      <ul>
+        <li> the largest set of pairs (item, concept) such that all items and all concepts in this set are distinct. </li>
+         <li> the smallest set of pairs (item, concept) such that all items and all concepts are present in at least one pair. </li>
+        </ul>
+      </li> 
+      <li> Create large instances of the problem and test your algorithm. </li> 
     </ul>
   </li>
  </ul>
