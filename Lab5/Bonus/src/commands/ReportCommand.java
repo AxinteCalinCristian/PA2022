@@ -18,6 +18,11 @@ import lombok.Setter;
 import utils.Catalog;
 import utils.Item;
 
+/**
+ * Catalog that creates a html report based on a catalog
+ * @author Calin Axinte
+ *
+ */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class ReportCommand implements Command<Catalog>{
 	

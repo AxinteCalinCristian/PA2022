@@ -14,6 +14,10 @@ public abstract class HopcroftKarpAlgorithm {
 	private static Map<String, Item> itemsMapping = new HashMap<>();
 	private static String dummyStr = "dummyStr";
 	
+	/**
+	 * Prints a solution to the given problem using the Hopcroft Karp algorithm
+	 * @param catalog
+	 */
 	public static void printSolution(Catalog catalog) {
 		constructAdjList(catalog);
 		
@@ -46,6 +50,13 @@ public abstract class HopcroftKarpAlgorithm {
         }
 	}
 	
+	/**
+	 * Performs a BFS search on a graph
+	 * @param pairU
+	 * @param pairV
+	 * @param dist
+	 * @return true if there are still vertices to be parsed, else false
+	 */
     private static Boolean BFS(Map<String, String> pairU, Map<String, String> pairV, Map<String, Integer> dist) {
     	Queue<String> queue = new LinkedList<>();
     	 
@@ -78,6 +89,14 @@ public abstract class HopcroftKarpAlgorithm {
         return (dist.get(dummyStr) != Integer.MAX_VALUE);
     }
     
+    /**
+     * Performs a DFS search on the graph
+     * @param u
+     * @param pairU
+     * @param pairV
+     * @param dist
+     * @return true if there are still vertices to be parsed, else false
+     */
     private static Boolean DFS(String u, Map<String, String> pairU, Map<String, String> pairV, Map<String, Integer> dist) {
 		 if (!u.equals(dummyStr)) {
 			 for(String s : adj.get(u)) {
@@ -96,7 +115,11 @@ public abstract class HopcroftKarpAlgorithm {
 		 }
 		 return true;
     }
-        
+    
+    /**
+     * Constructs an adjacency list from a catalog
+     * @param catalog
+     */
 	private static void constructAdjList(Catalog catalog) {
 		Set<Item> items = catalog.getItems();
 		adj.put(dummyStr, new HashSet<>());

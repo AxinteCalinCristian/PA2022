@@ -5,6 +5,11 @@ import java.util.Set;
 import utils.Catalog;
 import utils.Item;
 
+/**
+ * Command that lists all the items in a catalog
+ * @author Calin Axinte
+ *
+ */
 public class ListCommand implements Command<Catalog>{
 	
 	private Catalog catalog;

@@ -8,6 +8,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Command that opens a specified file
+ * @author Calin Axinte
+ *
+ */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class ViewCommand implements Command<String>{
 	

@@ -16,6 +16,11 @@ import utils.Book;
 import utils.Catalog;
 import utils.Magazine;
 
+/**
+ * Command that loads a catalog from a JSON file
+ * @author Calin Axinte
+ *
+ */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class LoadCommand implements Command<Catalog>{
 	

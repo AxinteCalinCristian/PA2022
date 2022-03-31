@@ -12,6 +12,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import utils.Catalog;
 
+/**
+ * Command that saves a catalog to a given path
+ * @author Calin Axinte
+ *
+ */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class SaveCommand implements Command<Catalog>{
 	

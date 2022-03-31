@@ -16,6 +16,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Info command - takes metadata info from given file
+ * @author Calin Axinte
+ *
+ */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class InfoCommand implements Command<Map<String, String>>{
 	
