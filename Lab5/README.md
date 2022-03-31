@@ -31,14 +31,14 @@
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> Suppose there is an official set of concepts (keywords) C, and that each item has a list of such concepts (example of such a classification system). Evolve your model in order to support this new feature. </li> 
-      <li> Write an algorithm that determines: 
+      <li> &#9989; Suppose there is an official set of concepts (keywords) C, and that each item has a list of such concepts (example of such a classification system). Evolve your model in order to support this new feature. </li> 
+      <li> &#9989; Write an algorithm that determines: 
       <ul>
-        <li> the largest set of pairs (item, concept) such that all items and all concepts in this set are distinct. </li>
-         <li> the smallest set of pairs (item, concept) such that all items and all concepts are present in at least one pair. </li>
+        <li> &#9989; the largest set of pairs (item, concept) such that all items and all concepts in this set are distinct. </li>
+         <li> &#9989; the smallest set of pairs (item, concept) such that all items and all concepts are present in at least one pair. </li>
         </ul>
       </li> 
-      <li> Create large instances of the problem and test your algorithm. </li> 
+      <li> &#9989; Create large instances of the problem and test your algorithm. </li> 
     </ul>
   </li>
  </ul>
