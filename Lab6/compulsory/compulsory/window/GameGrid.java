@@ -1,4 +1,4 @@
-package window;
+package compulsory.window;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 import lombok.Getter;
 import lombok.Setter;
-import utils.Pair;
+import compulsory.utils.Pair;
 
 public class GameGrid extends JPanel{
 	private static final long serialVersionUID = 1L;

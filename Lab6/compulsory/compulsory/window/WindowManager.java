@@ -1,4 +1,4 @@
-package window;
+package compulsory.window;
 
 import javax.swing.JFrame;
 

@@ -1,4 +1,4 @@
-package utils;
+package homework.utils;
 
 public class Pair<T, K> implements Cloneable{
 	private T first;

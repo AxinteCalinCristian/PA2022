@@ -1,4 +1,4 @@
-package window;
+package compulsory.window;
 
 import java.awt.Color;
 import java.awt.FlowLayout;

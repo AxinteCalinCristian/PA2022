@@ -1,8 +1,8 @@
-package main;
+package homework.main;
 
-import window.WindowManager;
+import homework.window.WindowManager;
 
-public class Compulsory {
+public class Homework {
 	public static void main(String[] args) {
 		WindowManager.run("Sticks 'n' stones");
 	}
