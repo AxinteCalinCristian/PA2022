@@ -1,10 +1,14 @@
 package homework.window;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 
+import homework.utils.GridController;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,30 +16,36 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class MainPanel extends JPanel{
+public class MainPanel extends JFrame implements MouseListener{
 
 	private static final long serialVersionUID = 1L;
 	
 	private Integer panelWidth = 600;
-	private Integer panelHeight = 600;
+	private Integer panelHeight = 700;
 	private Integer noOfCols = 10;
 	private Integer noOfRows = 10;
 	
 	private InputMenu inputMenu;
 	private FileManager fileManager;
 	private GameGrid gameGrid;
+	private Boolean currentPlayer = true;
 	
-	public MainPanel(Integer panelWidth, Integer panelHeight, Integer noOfCols, Integer noOfRows) {
+	public MainPanel(String appName, Integer panelWidth, Integer panelHeight, Integer noOfCols, Integer noOfRows) {
+		super(appName);
 		this.panelHeight = panelHeight;
 		this.panelWidth = panelWidth;
-		gameGrid = new GameGrid(noOfCols, noOfRows);
-		inputMenu = new InputMenu(gameGrid, noOfCols, noOfRows, "Grid size", "Generate");
-		fileManager = new FileManager();
 		
+		gameGrid = new GameGrid(this, noOfCols, noOfRows, currentPlayer);
+		inputMenu = new InputMenu(this, gameGrid, noOfCols, noOfRows, "Grid size", "Generate");
+		fileManager = new FileManager(this);
+		
+		this.setSize(panelWidth, panelHeight);
 		this.setLayout(new BorderLayout());
 		this.add(inputMenu, BorderLayout.PAGE_START);
 		this.add(gameGrid, BorderLayout.CENTER);
 		this.add(fileManager, BorderLayout.PAGE_END);
+		this.addMouseListener(this);
+		this.setResizable(false);
 		this.setVisible(true);
 	}
 	
@@ -43,4 +53,56 @@ public class MainPanel extends JPanel{
     public Dimension getPreferredSize() {
        return new Dimension(panelWidth, panelHeight);
     }
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		for(GridIntersection i : gameGrid.getIntersections()) {
+			if(i == e.getSource()) {
+				gameGrid.repaint();
+				i.updateComponent(Color.red, Color.blue);
+				currentPlayer = GridController.validateMove(currentPlayer, i, gameGrid);
+				
+				if(!GridController.checkMovesAvailable(gameGrid.getSticks())) {
+					inputMenu.showGameOverMenu();
+				}
+
+				break;
+			}
+		}
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {	
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		for(GridIntersection i : gameGrid.getIntersections()) {
+			if(i == e.getSource()) {
+				gameGrid.repaint();
+				i.updateComponent(Color.orange, Color.cyan);
+				break;
+			}
+		}
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		for(GridIntersection i : gameGrid.getIntersections()) {
+			if(i == e.getSource()) {
+				i.updateComponent(i.getDefaultColor(), i.getDefaultColor());
+				break;
+			}
+		}
+		
+	}
 }

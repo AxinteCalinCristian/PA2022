@@ -5,8 +5,7 @@ import javax.swing.JFrame;
 public abstract class WindowManager {
 	private static Integer appWidth = 600;
 	private static Integer appHeight = 600;
-	private static JFrame frame;
-	private static MainPanel mainPanel;
+	private static MainPanel mainFrame;
 	
 	public static void run(String appName) {
 		defaultSetup(appName);
@@ -19,38 +18,35 @@ public abstract class WindowManager {
 	}
 	
 	private static void defaultSetup(String appName) {
-		WindowManager.mainPanel = new MainPanel(WindowManager.appWidth, WindowManager.appHeight, 10, 10);
+		WindowManager.mainFrame = new MainPanel(appName, WindowManager.appWidth, WindowManager.appHeight, 10, 10);
 		
-		WindowManager.frame = new JFrame(appName);
+		WindowManager.mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		WindowManager.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		WindowManager.mainFrame.setSize(WindowManager.appWidth, WindowManager.appHeight);
+
+		WindowManager.mainFrame.pack();
 		
-		WindowManager.frame.setSize(WindowManager.appWidth, WindowManager.appHeight);
-		
-		WindowManager.frame.getContentPane().add(mainPanel);
-		WindowManager.frame.pack();
-		
-		WindowManager.frame.setLocationRelativeTo(null);
-		WindowManager.frame.setVisible(true);
+		WindowManager.mainFrame.setLocationRelativeTo(null);
+		WindowManager.mainFrame.setVisible(true);
 	}
 	
 	public static boolean setAppWidth(Integer appWidth) {
 		WindowManager.appWidth = appWidth;
-		if(WindowManager.frame == null || WindowManager.mainPanel == null) {
+		if(WindowManager.mainFrame == null) {
 			return false;
 		}
-		WindowManager.frame.setSize(WindowManager.appWidth, WindowManager.frame.getHeight());
-		WindowManager.mainPanel.setPanelWidth(WindowManager.appWidth);
+		WindowManager.mainFrame.setSize(WindowManager.appWidth, WindowManager.mainFrame.getHeight());
+		WindowManager.mainFrame.setPanelWidth(WindowManager.appWidth);
 		return true;
 	}
 	
 	public static boolean setAppHeight(Integer appHeight) {
 		WindowManager.appHeight = appHeight;
-		if(WindowManager.frame == null || WindowManager.mainPanel == null) {
+		if(WindowManager.mainFrame == null) {
 			return false;
 		}
-		WindowManager.frame.setSize(WindowManager.frame.getWidth(), WindowManager.appHeight);
-		WindowManager.mainPanel.setPanelHeight(WindowManager.appHeight);
+		WindowManager.mainFrame.setSize(WindowManager.mainFrame.getWidth(), WindowManager.appHeight);
+		WindowManager.mainFrame.setPanelHeight(WindowManager.appHeight);
 		return true;
 	}
 }

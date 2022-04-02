@@ -11,11 +11,11 @@
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> Create the object oriented model. </li> 
-      <li> Initialize the game by generating random sticks and place them on the board. Implement either direct or retained mode for drawing the game board. </li> 
-      <li> Implement the logic of the game. When the player execute a mouse pressed operation, a stone must be drawn at the mouse location: red or blue depending on whose turn it is. Validate the move, according to the game rules. Determine the winner of the game. </li> 
-      <li> (+0.5p) Export the current image of the game board into a PNG file. </li> 
-      <li> (+0.5p) Use object serialization in order to save and restore the current status of the game. </li> 
+      <li> &#9989; Create the object oriented model. </li> 
+      <li> &#9989; Initialize the game by generating random sticks and place them on the board. Implement either direct or retained mode for drawing the game board. </li> 
+      <li> &#9989; Implement the logic of the game. When the player execute a mouse pressed operation, a stone must be drawn at the mouse location: red or blue depending on whose turn it is. Validate the move, according to the game rules. Determine the winner of the game. </li> 
+      <li> &#9989; (+0.5p) Export the current image of the game board into a PNG file. </li> 
+      <li> &#9989; (+0.5p) Use object serialization in order to save and restore the current status of the game. </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
