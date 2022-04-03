@@ -20,8 +20,8 @@
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> Prove that the player who starts the game has always a winning strategy if and only if the corresponding graph does not have a perfect matching. </li> 
-      <li> Based on the above observation, implement an AI for the game. </li> 
+      <li> &#9989; Prove that the player who starts the game has always a winning strategy if and only if the corresponding graph does not have a perfect matching. </li> 
+      <li> &#9989; Based on the above observation, implement an AI for the game. </li> 
     </ul>
   </li>
  </ul>
