@@ -1,4 +1,4 @@
-package homework.window;
+package bonus.window;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,7 +8,8 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 
-import homework.utils.GridController;
+import bonus.utils.GameAI;
+import bonus.utils.GridController;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,7 +34,7 @@ public class MainPanel extends JFrame implements MouseListener{
 	private FileManager fileManager;
 	private GameGrid gameGrid;
 	private Boolean currentPlayer = true;
-	
+
 	public MainPanel(String appName, Integer panelWidth, Integer panelHeight, Integer noOfCols, Integer noOfRows) {
 		super(appName);
 		this.panelHeight = panelHeight;
@@ -60,8 +61,17 @@ public class MainPanel extends JFrame implements MouseListener{
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) { } 
+
+	@Override
+	public void mouseReleased(MouseEvent e) { 
 		for(GridIntersection i : gameGrid.getIntersections()) {
-			if(i == e.getSource()) {
+			if(i.equals(e.getSource()) && !i.getActive() && GridController.isMoveValid(i, gameGrid)) {
 				gameGrid.repaint();
 				i.updateComponent(Color.red, Color.blue);
 				currentPlayer = GridController.validateMove(currentPlayer, i, gameGrid);
@@ -69,22 +79,25 @@ public class MainPanel extends JFrame implements MouseListener{
 				if(!GridController.checkMovesAvailable(gameGrid.getSticks())) {
 					inputMenu.showGameOverMenu();
 				}
-
+				
+				gameGrid.repaint();
+				GridIntersection ai = GameAI.makeMove();
+				
+				if(ai == null) {
+					inputMenu.showGameOverMenu();
+					break;
+				}
+				
+				ai.updateComponent(Color.red, Color.blue);
+				currentPlayer = GridController.validateMove(currentPlayer, ai, gameGrid);
+				
+				if(!GridController.checkMovesAvailable(gameGrid.getSticks())) {
+					inputMenu.showGameOverMenu();
+				}
+				
 				break;
 			}
 		}
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {	
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

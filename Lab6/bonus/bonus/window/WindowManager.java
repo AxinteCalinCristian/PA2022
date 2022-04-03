@@ -1,4 +1,4 @@
-package homework.window;
+package bonus.window;
 
 import javax.swing.JFrame;
 
@@ -15,12 +15,6 @@ public abstract class WindowManager {
 		defaultSetup(appName);
 	}
 	
-	/**
-	 * Starts the window with the given presets.
-	 * @param appName
-	 * @param appWidth
-	 * @param appHeight
-	 */
 	public static void run(String appName, Integer appWidth, Integer appHeight) {
 		setAppWidth(appWidth);
 		setAppHeight(appHeight);

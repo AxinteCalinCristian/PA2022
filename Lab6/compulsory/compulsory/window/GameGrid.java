@@ -17,6 +17,10 @@ import lombok.Getter;
 import lombok.Setter;
 import compulsory.utils.Pair;
 
+/**
+ * The visual representation of the game grid. It includes all the logic behind updating the visual game state.
+ * @author Calin Axinte
+ */
 public class GameGrid extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
@@ -42,6 +46,11 @@ public class GameGrid extends JPanel{
 		generateGrid(noOfCols, noOfRows);
 	}
 	
+	/**
+	 * Generates a new grid with the given sizes.
+	 * @param noOfCols
+	 * @param noOfRows
+	 */
 	public void generateGrid(Integer noOfCols, Integer noOfRows) {
 		this.noOfCols = noOfCols;
 		this.noOfRows = noOfRows;
@@ -57,6 +66,9 @@ public class GameGrid extends JPanel{
 		this.setVisible(true);
 	}
 	
+	/**
+	 * Generates background image of the grid.
+	 */
 	private void createOffscreenImage() {
 		 image = new BufferedImage(canvasWidth, canvasHeight, BufferedImage.TYPE_INT_ARGB);
 		 offscreen = image.createGraphics();
@@ -64,7 +76,10 @@ public class GameGrid extends JPanel{
 		 offscreen.fillRect(0, 0, canvasWidth, canvasHeight);
 	}
 
-	
+	/**
+	 * Displays the grid.
+	 * @param graphics
+	 */
 	private void paintGrid(Graphics graphics) {
 		Graphics2D g = (Graphics2D) graphics;
 		g.setColor(Color.DARK_GRAY);
@@ -96,6 +111,10 @@ public class GameGrid extends JPanel{
 		 generateSticks(g);
 	}
 	
+	/**
+	 * Generates the sticks on the grid.
+	 * @param g
+	 */
 	private void generateSticks(Graphics2D g) {
 		Random rand = new Random();
 		int add;

@@ -1,4 +1,4 @@
-package homework.utils;
+package bonus.utils;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -8,14 +8,13 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import homework.window.GameGrid;
-import homework.window.GridIntersection;
-import homework.window.MainPanel;
+import bonus.window.GameGrid;
+import bonus.window.GridIntersection;
+import bonus.window.MainPanel;
 
 /**
  * Manages the game grid functional logic.
  * @author Calin Axinte
- *
  */
 public abstract class GridController {
 	/**
@@ -154,6 +153,7 @@ public abstract class GridController {
 		if(gameGrid.getFirstMove()) {
 			isValid = true;
 			gameGrid.setFirstMove(false);
+			GameAI.registerFirstMove(i, gameGrid);
 		}
 		
 		if(isValid) {
@@ -179,5 +179,22 @@ public abstract class GridController {
 			}
 		}
 		return false;
+	}
+	
+	public static boolean isMoveValid(GridIntersection i, GameGrid gameGrid) {
+		boolean isValid = false;
+		
+		if(!i.getActive()) {
+			for(Pair<GridIntersection, GridIntersection> stick : gameGrid.getSticks()) {
+				if((stick.first().equals(i) || stick.second().equals(i)) && stick.first().getActive() != stick.second().getActive()) {
+					isValid = true;
+				}
+			}
+		}
+		
+		if(gameGrid.getFirstMove()) {
+			isValid = true;
+		}
+		return isValid;
 	}
 }

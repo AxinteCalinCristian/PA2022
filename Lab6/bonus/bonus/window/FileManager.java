@@ -1,4 +1,4 @@
-package homework.window;
+package bonus.window;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -20,7 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import homework.utils.Pair;
+import bonus.utils.Pair;
 import lombok.extern.java.Log;
 
 /**
@@ -244,7 +244,7 @@ public class FileManager extends JPanel{
 			
 			saveFile.put("rowNum", mainFrame.getGameGrid().getNoOfRows());
 			saveFile.put("colNum", mainFrame.getGameGrid().getNoOfCols());
-			saveFile.put("currPlayer", (!mainFrame.getCurrentPlayer()) ? "1" : "2");
+			saveFile.put("currPlayer", mainFrame.getCurrentPlayer() ? "1" : "2");
 			saveFile.put("sticks", sticks);
 			saveFile.put("intersections", mainFrame.getGameGrid().getIntersections());
 			

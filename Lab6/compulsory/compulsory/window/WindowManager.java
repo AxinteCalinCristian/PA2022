@@ -2,6 +2,10 @@ package compulsory.window;
 
 import javax.swing.JFrame;
 
+/**
+ * Manages the application window.
+ * @author Calin Axinte
+ */
 public abstract class WindowManager {
 	private static Integer appWidth = 600;
 	private static Integer appHeight = 600;

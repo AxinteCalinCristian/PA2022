@@ -1,4 +1,4 @@
-package homework.window;
+package bonus.window;
 
 import java.awt.Color;
 import java.awt.FlowLayout;

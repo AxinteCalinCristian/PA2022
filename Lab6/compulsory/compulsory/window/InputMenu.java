@@ -11,6 +11,10 @@ import javax.swing.SpinnerNumberModel;
 
 import lombok.extern.java.Log;
 
+/**
+ * Menu that manages user input.
+ * @author Calin Axinte
+ */
 @Log
 public class InputMenu extends JPanel{
 	private static final long serialVersionUID = 1L;

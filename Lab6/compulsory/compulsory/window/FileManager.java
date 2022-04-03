@@ -6,6 +6,10 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * Menu that controls the file management aspect of the application
+ * @author Calin Axinte
+ */
 public class FileManager extends JPanel{
 	private static final long serialVersionUID = 1L;
 	

@@ -9,6 +9,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * The main frame of the application.
+ * @author Calin Axinte
+ */
 @Getter
 @Setter
 @NoArgsConstructor

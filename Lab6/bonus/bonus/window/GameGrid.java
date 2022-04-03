@@ -1,4 +1,4 @@
-package homework.window;
+package bonus.window;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -12,8 +12,8 @@ import javax.swing.JPanel;
 
 import lombok.Getter;
 import lombok.Setter;
-import homework.utils.GridController;
-import homework.utils.Pair;
+import bonus.utils.GridController;
+import bonus.utils.Pair;
 
 /**
  * The visual representation of the game grid. It includes all the logic behind updating the visual game state.
