@@ -11,8 +11,8 @@
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> Use the following number of tiles for each letter: A-9, B-2, C-2, D-4, E-12, F-2, G-3, H-2, I-9, J-1, K-1, L-4, M-2, N-6, O-8, P-2, Q-1, R-6, S-4, T-6, U-4, V-2, W-2, X-1, Y-2, Z-1 </li> 
-      <li> Use the following points for the letters:
+      <li> &#9989; Use the following number of tiles for each letter: A-9, B-2, C-2, D-4, E-12, F-2, G-3, H-2, I-9, J-1, K-1, L-4, M-2, N-6, O-8, P-2, Q-1, R-6, S-4, T-6, U-4, V-2, W-2, X-1, Y-2, Z-1 </li> 
+      <li> &#9989; Use the following points for the letters:
 	<ul>
 		<li> (1 point)-A, E, I, O, U, L, N, S, T, R </li>
 		<li> (2 points)-D, G </li>
@@ -23,10 +23,10 @@
 		<li> (10 points)-Q, Z </li>
 	</ul>
      </li> 
-      <li> Create an implementation of a dictionary, using some collection of words. Use an appropriate collection to represent the dictionary. This collection should be large enough; you may use aspell to generate a text file containing English words, or anything similar: WordNet, dexonline, etc. </li> 
-      <li> Implement the scoring and determine who the winner is at the end of the game. </li> 
-      <li> Make sure that players wait their turns, using a wait-notify approach. </li> 
-      <li> Implement a timekeeper thread that runs concurrently with the player threads, as a daemon. This thread will display the running time of the game and it will stop the game if it exceeds a certain time limit. </li> 
+      <li> &#9989; Create an implementation of a dictionary, using some collection of words. Use an appropriate collection to represent the dictionary. This collection should be large enough; you may use aspell to generate a text file containing English words, or anything similar: WordNet, dexonline, etc. </li> 
+      <li> &#9989; Implement the scoring and determine who the winner is at the end of the game. </li> 
+      <li> &#9989; Make sure that players wait their turns, using a wait-notify approach. </li> 
+      <li> &#9989; Implement a timekeeper thread that runs concurrently with the player threads, as a daemon. This thread will display the running time of the game and it will stop the game if it exceeds a certain time limit. </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
