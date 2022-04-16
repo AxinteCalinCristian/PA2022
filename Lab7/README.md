@@ -31,10 +31,10 @@
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> The dictionay must offer the possibility to search not only for a word, but for words which start with a given prefix (lookup). </li> 
-      <li> Implement the prefix search (for a classical collection) using a multi-threaded approach (parallel streams, ForkJoin, etc). </li> 
-      <li> Represent the words in the dictionary as a prefix tree or directed acyclic word graph for memory efficiency and prefix lookups. </li> 
-      <li> Compare the running time for the lookup operation between a standard collection and the one above (prefix tree or dawg). </li> 
+      <li> &#9989; The dictionay must offer the possibility to search not only for a word, but for words which start with a given prefix (lookup). </li> 
+      <li> &#9989; Implement the prefix search (for a classical collection) using a multi-threaded approach (parallel streams, ForkJoin, etc). </li> 
+      <li> &#9989; Represent the words in the dictionary as a prefix tree or directed acyclic word graph for memory efficiency and prefix lookups. </li> 
+      <li> &#9989; Compare the running time for the lookup operation between a standard collection and the one above (prefix tree or dawg). </li> 
     </ul>
   </li>
  </ul>
