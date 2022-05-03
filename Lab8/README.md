@@ -21,15 +21,15 @@
       <li> &#9989; Create an object-oriented model of the data managed by the application. </li> 
       <li> &#9989; Create a tool to import data from a real dataset: World capitals gps or other. </li> 
       <li> &#9989; Display the distances between various cities in the world. </li> 
-      <li> (+1p) Create a 2D map (using Swing or JavaFX) and draw on it the cities at their corresponding locations. </li> 
+      <li> &#9989; (+1p) Create a 2D map (using Swing or JavaFX) and draw on it the cities at their corresponding locations. </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> Use a connection pool in order to manage database connections, such as C3PO, HikariCP or Apache Commons DBCP. </li> 
-      <li> Two cities are sisters (or twins) if they have a form of legal or social agreement between for the purpose of promoting cultural and commercial ties. <br>
+      <li> &#9989; Use a connection pool in order to manage database connections, such as C3PO, HikariCP or Apache Commons DBCP. </li> 
+      <li> &#9989; Two cities are sisters (or twins) if they have a form of legal or social agreement between for the purpose of promoting cultural and commercial ties. <br>
        Using a ThreadPoolExecutor create and insert into your database a large number of fake cities (>=1000) and random sister relationships among them (the sisterhood probability should be low). </li> 
-      <li> Using Bron Kerbosch algorithm determine the sets of cities (inclusionwise maximal, with at least 3 elements) that are all sisters with each other. </li> 
+      <li> &#9989; Using Bron Kerbosch algorithm determine the sets of cities (inclusionwise maximal, with at least 3 elements) that are all sisters with each other. </li> 
     </ul>
   </li>
  </ul>

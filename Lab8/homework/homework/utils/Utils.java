@@ -2,6 +2,7 @@ package homework.utils;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.opencsv.CSVReader;
@@ -10,6 +11,9 @@ import com.opencsv.exceptions.CsvException;
 import homework.repositories.CityRepository;
 import homework.repositories.ContinentRepository;
 import homework.repositories.CountryRepository;
+import homework.graphics.GraphicsController;
+import homework.graphics.MapPoint;
+import homework.graphics.SphericalMercator;
 import homework.models.City;
 import homework.models.Continent;
 import homework.models.Country;
@@ -17,6 +21,8 @@ import lombok.extern.java.Log;
 
 @Log
 public class Utils {
+	private static SphericalMercator sphMercator = new SphericalMercator();
+	
 	public static double getDistance(City a, City b) {
 		double lat1 = Double.parseDouble(a.getLatitude());
 		double long1 = Double.parseDouble(a.getLongitude());
@@ -111,5 +117,31 @@ public class Utils {
 		}
 		
 		return Database.addCity(new City(-1, name, country, true, lat, lon));
+	}
+	
+	public static void displayCities() {
+		List<City> cities = CityRepository.getAll();
+		List<MapPoint> points = convertCitiesToMap(cities);
+		
+		GraphicsController.run("Cities map", 800, 600, points);
+	}
+	
+	private static List<MapPoint> convertCitiesToMap(List<City> cities) {
+		List<MapPoint> points = new LinkedList<>();
+		points.add(new MapPoint(10.0, 10.0, 10.0, "Test", null));
+		
+		for(City c : cities) {
+			double x = Double.parseDouble(c.getLatitude());
+			x = sphMercator.xAxisProjection(x);
+			
+			double y = Double.parseDouble(c.getLongitude());
+			y = sphMercator.yAxisProjection(y);
+			
+			if(!Double.isNaN(x) && !Double.isNaN(y)) {
+				points.add(new MapPoint(x, y, 10.0, c.getName(), null));
+			}
+		}
+		
+		return points;
 	}
 }

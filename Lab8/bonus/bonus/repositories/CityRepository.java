@@ -1,4 +1,4 @@
-package homework.repositories;
+package bonus.repositories;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-import homework.models.City;
-import homework.models.Country;
+import bonus.models.City;
+import bonus.models.Country;
 import lombok.extern.java.Log;
 
 @Log
@@ -124,6 +124,10 @@ public class CityRepository {
 		return cities;
 	}
 	
+	/**
+	 * Returns all cities in the db.
+	 * @return list with the cities.
+	 */
 	public static List<City> getAll() {
 		List<City> cities = new LinkedList<>();
 		
