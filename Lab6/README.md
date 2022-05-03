@@ -1,4 +1,4 @@
-<h2> Laboratory 3 </h2>
+<h2> Laboratory 6 </h2>
 <ul>
   <li> <h3> Compulsory </h3> 
 	Create the following components:
