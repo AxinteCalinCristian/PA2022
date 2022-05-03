@@ -26,15 +26,14 @@ public class MapPoint extends JPanel {
 		this.diameter = diameter;
 		this.name = name;
 		this.mainPanel = mainPanel;
-		
+
 		this.setVisible(true);
 	}
 	
 	@Override
-	protected void paintComponent(Graphics g) {
+	public void paint(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.red);
-		System.out.println((int) (xPos - diameter / 2) + " " + (int) (yPos - diameter / 2) + " " + diameter.intValue());
         g2d.fillRect((int) (xPos - diameter / 2), (int) (yPos - diameter / 2), diameter.intValue(), diameter.intValue());
 	}
 }

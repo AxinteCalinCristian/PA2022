@@ -128,7 +128,6 @@ public class Utils {
 	
 	private static List<MapPoint> convertCitiesToMap(List<City> cities) {
 		List<MapPoint> points = new LinkedList<>();
-		points.add(new MapPoint(10.0, 10.0, 10.0, "Test", null));
 		
 		for(City c : cities) {
 			double x = Double.parseDouble(c.getLatitude());
@@ -138,7 +137,7 @@ public class Utils {
 			y = sphMercator.yAxisProjection(y);
 			
 			if(!Double.isNaN(x) && !Double.isNaN(y)) {
-				points.add(new MapPoint(x, y, 10.0, c.getName(), null));
+				points.add(new MapPoint(x, y, 4.0, c.getName(), null));
 			}
 		}
 		

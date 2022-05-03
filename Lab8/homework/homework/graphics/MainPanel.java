@@ -22,7 +22,8 @@ public class MainPanel extends JPanel {
 		this.panelWidth = width;
 		this.panelHeight = height;
 		this.mapController = new MapController(this, points);
-
+		
+		this.setSize(getPreferredSize());
 		this.add(mapController);
 		this.setVisible(true);
 	}

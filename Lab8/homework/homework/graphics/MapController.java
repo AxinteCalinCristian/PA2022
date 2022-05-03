@@ -20,6 +20,7 @@ public class MapController extends JPanel {
 		normalizePositions();
 		
 		this.setPreferredSize(this.mainPanel.getPreferredSize());
+		this.setSize(getPreferredSize());
 		
 		for(MapPoint p : this.points) {
 			p.setMainPanel(this.mainPanel);

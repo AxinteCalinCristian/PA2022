@@ -28,6 +28,7 @@ public abstract class GraphicsController {
 		GraphicsController.frame.pack();
 		
 		GraphicsController.frame.setLocationRelativeTo(null);
+		GraphicsController.frame.setResizable(false);
 		GraphicsController.frame.setVisible(true);
 	}
 	
