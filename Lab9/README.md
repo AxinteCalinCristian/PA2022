@@ -18,10 +18,10 @@
   </li>
   <li> <h3> Homework </h3> 
      <ul>
-      <li> Create all entity classes and repositories. Implement properly the one-to-many relationships. </li> 
-      <li> Create a generic AbstractRepository using generics in order to simplify the creation of the repository classes. You may take a look at the CrudRepository interface from Spring Framework. </li> 
-      <li> Insert, using JPA, a large number of cities in the database and log the execution time of your JPQL queries. </li> 
-      <li> (+1p) Assume each city has a new property, its population. Use a constraint solver, such as Choco solver, OptaPlanner or ORTools, in order to find a set of cities having names that start with the same letter, the total sum of their population is between two given bounds and they are from different countries. </li> 
+      <li> &#9989; Create all entity classes and repositories. Implement properly the one-to-many relationships. </li> 
+      <li> &#9989; Create a generic AbstractRepository using generics in order to simplify the creation of the repository classes. You may take a look at the CrudRepository interface from Spring Framework. </li> 
+      <li> &#9989; Insert, using JPA, a large number of cities in the database and log the execution time of your JPQL queries. </li> 
+      <li> &#9989; (+1p) Assume each city has a new property, its population. Use a constraint solver, such as Choco solver, OptaPlanner or ORTools, in order to find a set of cities having names that start with the same letter, the total sum of their population is between two given bounds and they are from different countries. </li> 
     </ul>
   </li>
   <li> <h3> Bonus </h3> 
