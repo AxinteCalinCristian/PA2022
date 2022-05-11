@@ -31,5 +31,13 @@
       <li> &#9989; The application will use JDBC or JPA depending on a parameter given in an initialization file. </li> 
       <li> &#9989; You may also use an IoC container in order to inject the DAO implementations. </li>
     </ul>
+	 <br> >>> For local config: <br>
+	  >>> In << ./bonus/resources/application.properties >> change the following props: 
+	  <ul>
+		  <li> db_implementation_type= << jpa/jdbc >> </li>
+		  <li> jdbc_database_url= << jdbc_db_url >> </li>
+		  <li> jdbc_database_user= << username >> </li>
+		  <li> jdbc_database_pass= << password >> </li>
+	  </ul>
   </li>
  </ul>
