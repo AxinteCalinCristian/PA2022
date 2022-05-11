@@ -26,10 +26,10 @@
   </li>
   <li> <h3> Bonus </h3> 
     <ul>
-      <li> Implement properly the many-to-many sisterhood relationship. </li> 
-      <li> Implement both the JDBC and JPA implementations and use an AbstractFactory in order to create the DAO objects (the repositories). </li> 
-      <li> The application will use JDBC or JPA depending on a parameter given in an initialization file. </li> 
-      <li> You may also use an IoC container in order to inject the DAO implementations. </li>
+      <li> &#9989; Implement properly the many-to-many sisterhood relationship. </li> 
+      <li> &#9989; Implement both the JDBC and JPA implementations and use an AbstractFactory in order to create the DAO objects (the repositories). </li> 
+      <li> &#9989; The application will use JDBC or JPA depending on a parameter given in an initialization file. </li> 
+      <li> &#9989; You may also use an IoC container in order to inject the DAO implementations. </li>
     </ul>
   </li>
  </ul>
