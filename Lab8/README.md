@@ -1,5 +1,12 @@
 <h2> Laboratory 8 </h2>
 <ul>
+<br> >>> For local config: <br>
+  >>> In << .env >> change the following props: 
+  <ul>
+	  <li> DATABASE_URL= << jdbc_db_url >> </li>
+	  <li> DATABASE_USER= << username >> </li>
+	  <li> DATABASE_PASS= << password >> </li>
+  </ul>
   <li> <h3> Compulsory </h3> 
     <ul>
       <li> &#9989; Create a relational database using any RDBMS (Oracle, Postgres, MySql, Java DB, etc.). </li> 
