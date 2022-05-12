@@ -14,7 +14,7 @@ public class JPACityRepository extends JPAAbstractRepository<City> {
         return instance;
     }
 	
-	private JPACityRepository() {}
+	private JPACityRepository() { setTClass(City.class); }
 	
 	/**
 	 * Adds the specified city to the database

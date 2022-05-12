@@ -17,6 +17,7 @@ import bonus.database.DatabaseController;
 import bonus.models.City;
 import bonus.models.Continent;
 import bonus.models.Country;
+import bonus.models.SisterRelationship;
 
 public class Utils {
 	private static final Faker faker = new Faker();
@@ -165,5 +166,20 @@ public class Utils {
 			return sol.toString();
 		else
 			return "";
+	}
+	
+	public static void addSisterRelationships(Integer noOfRels) {
+		List<City> cities = Database.getDatabaseController().getCityRepository().getAll();
+		
+		for(int i=0;i<noOfRels;i++) {
+			int idx1 = Math.abs(rand.nextInt()) % cities.size();
+			int idx2 = Math.abs(rand.nextInt()) % cities.size();
+			
+			while(idx1 == idx2) {
+				idx2 = Math.abs(rand.nextInt()) % cities.size();
+			}
+
+			Database.getDatabaseController().getSisterRelationshipRepository().addEntry(new SisterRelationship(cities.get(idx1), cities.get(idx2)));
+		}
 	}
 }

@@ -15,11 +15,14 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name="sister_cities")
@@ -35,11 +38,18 @@ public class SisterRelationship {
 	@Column(name="id")
 	private Integer id;
 	
+	@NonNull
 	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "first_city", referencedColumnName = "id")
 	private City firstCity;
 	
+	@NonNull
 	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "second_city", referencedColumnName = "id")
 	private City secondCity;
+	
+	@Override
+	public String toString() {
+		return id + ": [ " + firstCity.getName() + " -- " + secondCity.getName() + " ]";
+	}
 }

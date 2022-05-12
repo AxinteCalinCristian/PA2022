@@ -14,7 +14,7 @@ public class JPAContinentRepository extends JPAAbstractRepository<Continent> {
         return instance;
     }
 	
-	private JPAContinentRepository() {}
+	private JPAContinentRepository() { setTClass(Continent.class); }
 	
 	/**
 	 * Adds the specified continent to the database

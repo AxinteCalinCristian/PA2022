@@ -59,19 +59,22 @@ public class JDBCCityRepository implements Repository<City>{
 		}
 		
 		try {
-			preparedStatement = this.connection.prepareStatement("insert into cities (name, country, capital, latitude, longitude) values (?, ?, ?, ?, ?)");
-			List<Country> countries = JDBCCountryRepository.getInstance().getByName(city.getCountry().getName());
-			
-			if(countries.size() == 0) {
-				log.warning("Invalid country");
-				return false;
+			Integer id = city.getId();
+			if(id == null || id < 0) {
+				resultSet = this.statement.executeQuery("select max(id) as max_id from cities");
+				resultSet.next();
+				id = resultSet.getInt("max_id");
+				id++;
 			}
-			
-			preparedStatement.setString(1, city.getName());
-			preparedStatement.setInt(2, countries.get(0).getId());
-			preparedStatement.setBoolean(3, city.getCapital());
-			preparedStatement.setString(4, city.getLatitude());
-			preparedStatement.setString(5, city.getLongitude());
+			preparedStatement = this.connection.prepareStatement("insert into cities (id, name, country, capital, latitude, longitude, population) values (?, ?, ?, ?, ?, ?, ?)");
+
+			preparedStatement.setInt(1, id);
+			preparedStatement.setString(2, city.getName());
+			preparedStatement.setInt(3, city.getCountry().getId());
+			preparedStatement.setBoolean(4, city.getCapital());
+			preparedStatement.setString(5, city.getLatitude());
+			preparedStatement.setString(6, city.getLongitude());
+			preparedStatement.setInt(7, city.getPopulation());
 			
 			return (preparedStatement.executeUpdate() != 0);
 		} catch (SQLException e) {
@@ -98,7 +101,7 @@ public class JDBCCityRepository implements Repository<City>{
 		
 		City c = null;
 		try {
-			resultSet = this.statement.executeQuery("select * from continents where id=" + id);
+			resultSet = this.statement.executeQuery("select * from cities where id=" + id);
 			resultSet.next();
 			
 			Country count = JDBCCountryRepository.getInstance().getById(resultSet.getInt("country"));

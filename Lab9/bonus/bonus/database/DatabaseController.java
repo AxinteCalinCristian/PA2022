@@ -6,6 +6,10 @@ import bonus.models.Country;
 import bonus.models.SisterRelationship;
 import bonus.repositories.Repository;
 
+/**
+ * Represents a generic database controller.
+ * @author Calin Axinte
+ */
 public interface DatabaseController {
 	public Repository<City> getCityRepository();
 	public Repository<Country> getCountryRepository();

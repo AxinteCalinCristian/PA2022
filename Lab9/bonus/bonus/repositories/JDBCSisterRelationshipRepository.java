@@ -59,9 +59,17 @@ public class JDBCSisterRelationshipRepository implements Repository<SisterRelati
 		}
 		
 		try {
-			preparedStatement = this.connection.prepareStatement("insert into sister_cities (first_city, second_city) values (?, ?)");
-			preparedStatement.setInt(1, sisterRelationship.getFirstCity().getId());
-			preparedStatement.setInt(2, sisterRelationship.getSecondCity().getId());
+			Integer id = sisterRelationship.getId();
+			if(id == null || id < 0) {
+				resultSet = this.statement.executeQuery("select max(id) as max_id from sister_cities");
+				resultSet.next();
+				id = resultSet.getInt("max_id");
+				id++;
+			}
+			preparedStatement = this.connection.prepareStatement("insert into sister_cities (id, first_city, second_city) values (?, ?, ?)");
+			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(2, sisterRelationship.getFirstCity().getId());
+			preparedStatement.setInt(3, sisterRelationship.getSecondCity().getId());
 			return (preparedStatement.executeUpdate() != 0);
 		} catch (SQLException e) {
 			log.warning("Could not insert into sister relationships");

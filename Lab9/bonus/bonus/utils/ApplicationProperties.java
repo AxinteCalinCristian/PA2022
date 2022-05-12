@@ -23,8 +23,7 @@ public class ApplicationProperties {
     } 
 	
 	private ApplicationProperties() {
-		Configurator.setLevel("org.hibernate.SQL", Level.DEBUG);
-		Configurator.setLevel("org.hibernate.stat", Level.DEBUG);
+		setLoggingLevel(Level.DEBUG);
 		String app_properties = this.getClass().getPackageName().substring(0, this.getClass().getPackageName().indexOf('.'));
 		app_properties = "./" + app_properties + "/resources/application.properties";
 		
@@ -50,5 +49,14 @@ public class ApplicationProperties {
 	
 	public boolean containsProperty(String key) {
 		return configProp.containsKey(key);
+	}
+	
+	/**
+	 * Sets the logging level for the application.
+	 * @param loggingLevel
+	 */
+	public void setLoggingLevel(Level loggingLevel) {
+		Configurator.setLevel("org.hibernate.SQL", loggingLevel);
+		Configurator.setLevel("org.hibernate.stat", loggingLevel);
 	}
 }

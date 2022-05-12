@@ -14,7 +14,7 @@ public class JPACountryRepository extends JPAAbstractRepository<Country> {
         return instance;
     }
 	
-	private JPACountryRepository() {}
+	private JPACountryRepository() { setTClass(Country.class); }
 	
 	/**
 	 * Adds the specified country to the database

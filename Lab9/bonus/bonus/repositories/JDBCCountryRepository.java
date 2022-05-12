@@ -59,9 +59,19 @@ public class JDBCCountryRepository implements Repository<Country> {
 		}
 		
 		try {
-			preparedStatement = this.connection.prepareStatement("insert into countries (name, code, continent) values (?, ?, ?)");
-			preparedStatement.setString(1, country.getName());
-			preparedStatement.setString(2, country.getCode());
+			Integer id = country.getId();
+			if(id == null || id < 0) {
+				resultSet = this.statement.executeQuery("select max(id) as max_id from countries");
+				resultSet.next();
+				id = resultSet.getInt("max_id");
+				id++;
+			}
+			
+			preparedStatement = this.connection.prepareStatement("insert into countries (id, name, code, continent) values (?, ?, ?, ?)");
+			preparedStatement.setInt(1, id);
+			preparedStatement.setString(2, country.getName());
+			preparedStatement.setString(3, country.getCode());
+			preparedStatement.setInt(4, country.getContinent().getId());
 
 			List<Continent> conts = JDBCContinentRepository.getInstance().getByName(country.getContinent().getName());
 			

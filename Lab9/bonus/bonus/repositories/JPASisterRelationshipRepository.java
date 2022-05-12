@@ -15,7 +15,7 @@ public class JPASisterRelationshipRepository extends JPAAbstractRepository<Siste
         return instance;
     }
 	
-	private JPASisterRelationshipRepository() {}
+	private JPASisterRelationshipRepository() { setTClass(SisterRelationship.class); }
 	
 	/**
 	 * Adds the specified sister relationship to the database

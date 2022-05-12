@@ -5,6 +5,10 @@ import bonus.utils.ApplicationProperties;
 public abstract class Database {
 	private static final ApplicationProperties appConfig = ApplicationProperties.getInstance();
 	
+	/**
+	 * The database controller based on the configuration provided in the application properties file.
+	 * @return the specified database controller.
+	 */
 	public static DatabaseController getDatabaseController() {
 		String impl_type = getDesiredConfig();
 		

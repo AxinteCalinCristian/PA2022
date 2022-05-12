@@ -58,8 +58,17 @@ public class JDBCContinentRepository implements Repository<Continent> {
 		}
 		
 		try {
-			preparedStatement = this.connection.prepareStatement("insert into continents (name) values (?)");
-			preparedStatement.setString(1, continent.getName());
+			Integer id = continent.getId();
+			if(id == null || id < 0) {
+				resultSet = this.statement.executeQuery("select max(id) as max_id from continents");
+				resultSet.next();
+				id = resultSet.getInt("max_id");
+				id++;
+			}
+			
+			preparedStatement = this.connection.prepareStatement("insert into continents (id, name) values (?, ?)");
+			preparedStatement.setInt(1, id);
+			preparedStatement.setString(2, continent.getName());
 			
 			return (preparedStatement.executeUpdate() != 0);
 		} catch (SQLException e) {

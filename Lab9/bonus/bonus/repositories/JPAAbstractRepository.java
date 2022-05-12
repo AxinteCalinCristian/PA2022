@@ -1,6 +1,5 @@
 package bonus.repositories;
 
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +9,12 @@ import bonus.utils.EntityManagementController;
 
 public abstract class JPAAbstractRepository<T> implements Repository<T> {
 	private static EntityManager em = EntityManagementController.emf.createEntityManager();
-	
+	private Class<T> tClass = null;
+
+	@SuppressWarnings("unchecked")
+	protected void setTClass(Class<?> class1) {
+		this.tClass = (Class<T>) class1;
+	}
 	/**
 	 * Adds the specified item to the database
 	 * @param item
@@ -27,10 +31,8 @@ public abstract class JPAAbstractRepository<T> implements Repository<T> {
 	 * @param id
 	 * @return the item or null, if not found.
 	 */
-	@SuppressWarnings("unchecked")
 	public synchronized T getItemById(Integer id) {
-		Class<T> tClass = (Class<T>) ((ParameterizedType) ((Object) JPAAbstractRepository.class).getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-		T item = em.find(tClass, id);
+		T item = em.find(this.tClass, id);
 		return item;
 	}
 	
